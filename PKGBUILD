@@ -14,10 +14,10 @@ md5sums=('SKIP') #generate with 'makepkg -g'
 
 build() {
   cd pacman-download-wrapper
-  deno build --allow-net pacman-download-wrapper.ts
+  deno compile --allow-net pacman-download-wrapper.ts
 }
 
 package() {
   mkdir -p ${pkgdir}/usr/bin
-  install -Dm555 ./pacman-download-wrapper "${pkgdir}/usr/bin/pacman-download-wrapper"
+  install -Dm555 ./pacman-download-wrapper/pacman-download-wrapper "${pkgdir}/usr/bin/pacman-download-wrapper"
 }
