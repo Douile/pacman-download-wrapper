@@ -1,7 +1,7 @@
 # Maintainer: Douile <youremail@domain.com>
 pkgname=pacman-download-wrapper
 pkgver=0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Wrap pacman XferCommand to download http/https/ftp with aria2 and everything else with curl"
 arch=(any)
 url="https://github.com/Douile/pacman-download-wrapper.git"
@@ -14,7 +14,7 @@ md5sums=('SKIP') #generate with 'makepkg -g'
 
 build() {
   cd pacman-download-wrapper
-  deno compile --allow-net pacman-download-wrapper.ts
+  deno compile --allow-run pacman-download-wrapper.ts
 }
 
 package() {
